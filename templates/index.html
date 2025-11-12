@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login & Register</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <style>
+    .hidden { display: none; }
+  </style>
+
+</head>
+<body>
+  <div class="form-container">
+
+    <!-- Login Form -->
+    <form id="login-form">
+      <h2>Login</h2>
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" name="email" placeholder="Enter your email" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" placeholder="Enter your password" required />
+
+      <button type="submit">Login</button>
+      <a href="#" id="show-register" style="display:block;text-align:center;margin-top:16px;color:#228be6;">
+        Don't have an account? Register
+      </a>
+    </form>
+
+    <!-- Register Form -->
+    <form id="register-form" class="hidden">
+      <h2>Register</h2>
+      <label for="register-name">Full Name</label>
+      <input type="text" id="register-name" name="name" placeholder="Enter your full name" required />
+
+      <label for="register-email">Email</label>
+      <input type="email" id="register-email" name="email" placeholder="Enter your email" required />
+
+      <label for="register-password">Password</label>
+      <input type="password" id="register-password" name="password" placeholder="Enter a password" required />
+
+      <button type="submit">Register</button>
+      <a href="#" id="show-login" style="display:block;text-align:center;margin-top:16px;color:#228be6;">
+        Already have an account? Login
+      </a>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    document.getElementById('show-register').onclick = function() {
+      loginForm.classList.add('hidden');
+      registerForm.classList.remove('hidden');
+    };
+    document.getElementById('show-login').onclick = function() {
+      registerForm.classList.add('hidden');
+      loginForm.classList.remove('hidden');
+    };
+  </script>
+    
+</body>
+</html>
